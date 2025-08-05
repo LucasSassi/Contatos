@@ -10,10 +10,10 @@ export let contatos = [];
 export function exibirMenu() {
   console.log(
     "=========MENU=========\n1-Adicionar Contatos\n2-Listar Contatos\n3-Atualizar Contatos\n4-Deletar contatos\n0-Sair do programa"
-  );
+  ); // saida
 
-  console.log("Insira a opção desejada.\n");
-  let opcaoMenu = prompt("> ");
+  console.log("Insira a opção desejada.\n"); // saida
+  let opcaoMenu = prompt("> "); // entrada
   opcaoMenu = parseInt(opcaoMenu, 10);
   switch (opcaoMenu) {
     case 1:
@@ -34,7 +34,7 @@ export function exibirMenu() {
       process.exit();
       break;
     default:
-      console.log("Insira uma opção válida!\n");
+      console.log("Insira uma opção válida!\n"); // saida
       exibirMenu();
   }
 }

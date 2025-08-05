@@ -2,15 +2,15 @@ import { contatos, exibirMenu, prompt } from "./atvdd.js";
 
 export function atualizarContato() {
   console.clear();
-  console.log("=========CONTATOS=========");
+  console.log("=========CONTATOS========="); // saida
   contatos.forEach((contato) => {
     console.log(
       `ID: ${contato.id}, Nome: ${contato.nome}, Telefone: ${contato.telefone}, Email: ${contato.email}`
-    );
+    ); // saida
   });
 
-  console.log("Qual o ID do contato que deseja atualizar?: ");
-  let idSelecionado = prompt("> ");
+  console.log("Qual o ID do contato que deseja atualizar?: "); // saida
+  let idSelecionado = prompt("> "); // entrada
   idSelecionado = parseInt(idSelecionado);
 
   const contatoParaAtualizar = contatos.find(
@@ -19,15 +19,15 @@ export function atualizarContato() {
 
   if (!contatoParaAtualizar) {
     console.clear();
-    console.log("Contato não encontrado. Por favor, digite um ID válido.");
-    prompt("Pressione Enter para continuar...");
+    console.log("Contato não encontrado. Por favor, digite um ID válido."); // saida
+    prompt("Pressione Enter para continuar..."); // entrada
     return;
   }
 
   console.log(
     `(Atual: ${contatoParaAtualizar.nome}) Digite o NOVO nome do contato (ou deixe em branco): `
-  );
-  let novoNome = prompt("> ");
+  ); // saida
+  let novoNome = prompt("> "); // entrada
 
   if (novoNome !== "") {
     contatoParaAtualizar.nome = novoNome;
@@ -35,8 +35,8 @@ export function atualizarContato() {
 
   console.log(
     `(Atual: ${contatoParaAtualizar.telefone}) Digite o NOVO telefone do contato (ou deixe em branco): `
-  );
-  let novoTelefone = prompt("> ");
+  ); // saida
+  let novoTelefone = prompt("> "); // entrada
 
   const telefoneFormatado2 = `(${novoTelefone.substring(0,2)})${novoTelefone.substring(2, 7)}-${novoTelefone.substring(7)}`;
   contatoParaAtualizar.telefone = telefoneFormatado2;
@@ -47,8 +47,8 @@ export function atualizarContato() {
 
   console.log(
     `(Atual: ${contatoParaAtualizar.email}) Digite o NOVO email do contato (ou deixe em branco): `
-  );
-  let novoEmail = prompt("> ");
+  ); // saida
+  let novoEmail = prompt("> "); // entrada
 
   if (novoEmail !== "") {
     contatoParaAtualizar.email = novoEmail;
@@ -57,6 +57,6 @@ export function atualizarContato() {
   console.clear();
   console.log(
     `===Contato: ${contatoParaAtualizar.nome}, editado com sucesso!! `
-  );
+  ); // saida
   exibirMenu();
 }
